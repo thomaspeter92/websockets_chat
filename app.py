@@ -114,4 +114,3 @@ def chat():
     return render_template('index.html')
 
 
-
