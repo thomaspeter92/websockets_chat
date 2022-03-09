@@ -1,0 +1,86 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python Websockets Chat Demo</title>
+<!--    <link href="static/css/application.css" rel="stylesheet" media="screen">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .chat-container {
+            width: 50%;
+            height: 80vh;
+            margin: auto;
+            background-color: rgba(0,0,0,0.1);
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .message {
+            background-color: rgba(0,100,255,0.2);
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        #chat-text {
+            overflow-y: scroll;
+            color: rgba(0,0,0,0.65)
+        }
+        .message-title{
+            font-weight: bold;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="page-wrap">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-sm">
+                <a href="/" class="navbar-brand">FlaskApp</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="chat" class="nav-link">Chat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="bar-chart" class="nav-link">Bar Chart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pie-chart" class="nav-link">Pie Chart</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-sm my-5">
+            <div class="jumbotron text-center my-5">
+                <h1>Python Websockets Chat Demo</h1>
+                <p>A simple chat application using flask-sockets. Two security features have been added, one on the front end(throttling), and one on the backend.</p>
+                <p>Open the javascript console to see what happens when you try to submit too many messages consecutively.</p>
+            </div>
+
+            <div class="chat-container">
+
+                <div id="chat-text">
+
+                </div>
+                <form id="input-form" class="form-inline mt-auto">
+                    <div class="form-group">
+                      <input id="input-handle" type="text" class="form-control my-2" placeholder="Enter handle" autofocus />
+
+                      <input id="input-text" type="text" class="form-control my-2" placeholder="Enter chat text here!" autofocus />
+                    </div>
+                    <button class="btn btn-primary" type="submit">Send</button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="static/js/reconnecting-websocket.min.js"></script>
+    <script type="text/javascript" src="static/js/application.js"></script>
+  </body>
+</html>
